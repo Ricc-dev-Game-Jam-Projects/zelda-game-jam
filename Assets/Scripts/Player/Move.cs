@@ -5,19 +5,30 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float speed = 5f;
-    
-    private Transform transform;
+    private Transform transf;
 
-    private void Start()
+    void Start()
     {
-        transform = GetComponent<Transform>();
+        transf = GetComponent<Transform>();
     }
-
-    private void FixedUpdate()
+    
+    void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transf.Translate(Vector3.left * Time.deltaTime * speed);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transf.Translate(Vector3.right * Time.deltaTime * speed);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            transf.Translate(Vector3.down * Time.deltaTime * speed);
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            transf.Translate(Vector3.up * Time.deltaTime * speed);
         }
     }
 }
