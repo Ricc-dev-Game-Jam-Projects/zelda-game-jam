@@ -2,9 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Direction
+{
+    right,
+    left,
+    up,
+    down
+}
+
+[RequireComponent(typeof(Player))]
 public class Move : MonoBehaviour
 {
     public float speed = 5f;
+    public Direction dir;
     private Transform transf;
 
     void Start()
