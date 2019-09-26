@@ -32,31 +32,6 @@ namespace Assets.Scripts.Drops
             return this.DropRating;
         }
 
-        public void Heal(int heal)
-        {
-            if(LifePoints + heal > MaxLifePoints)
-            {
-                LifePoints = MaxLifePoints;
-            }
-            else
-            {
-                LifePoints += heal;
-            }
-        }
-
-       public bool Damage(int damage)
-        {
-            if(LifePoints - damage < 0)
-            {
-                LifePoints = 0;
-                return true;
-            }
-            else
-            {
-                LifePoints -= damage;
-                return false;
-            }
-        }
 
     }
 }

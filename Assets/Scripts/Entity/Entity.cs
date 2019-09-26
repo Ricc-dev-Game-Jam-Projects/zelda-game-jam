@@ -5,17 +5,18 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    
-    //protected bool CanBeDamaged { get; set; }
-    protected bool isAlive { get; set; }
-    protected Hearts Life { get; set; }
-    protected Coins Gold { get; set; }
+    public bool isAlive;
+    public Heart Life;
+    public CoinBag Gold;
 
-    public Entity()
+    public Move MyMove;
+    public Attack MyAttack;
+
+    private void Start()
     {
         isAlive = true;
-        Life = new Hearts(5);
-        Gold = new Coins(99);
+        Life = new Heart(3);
+        Gold = new CoinBag(0);
     }
     
 
@@ -30,8 +31,4 @@ public class Entity : MonoBehaviour
             //knockback pra voce fazer riccardo
         }
     }
-
-    public Move MyMove;
-    public Attack MyAttack;
-
 }
