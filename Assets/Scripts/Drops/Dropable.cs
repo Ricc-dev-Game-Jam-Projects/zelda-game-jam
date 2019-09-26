@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Drops
 {
-    abstract class Dropable
+    public abstract class Dropable
     {
         protected float DropRating { get; set; }
         protected string SpritePath { get; set; }
+        public Dropable()
+        {
+            this.DropRating = 0.25f;
+        }
 
         public abstract float IncreaseDropRating();
-        public abstract float DecreaseDropRating(int parameter);
+        public abstract float DecreaseDropRating(float parameter);
     }
 }
