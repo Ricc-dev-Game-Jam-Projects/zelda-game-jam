@@ -12,7 +12,6 @@ public class Coins : Dropable
     private void Start()
     {
         this.DropRating = 0.35f;
-        this.ActualCoinNumber = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,7 +19,10 @@ public class Coins : Dropable
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            //player.he
+            Debug.Log("Player not null");
+            //player.Gold.AddCoin(ActualCoinNumber);
+            Destroy(this.gameObject);
+            if (player.Gold == null) Debug.LogWarning("GOLD NULO");
         }
     }
     
