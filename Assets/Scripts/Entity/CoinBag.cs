@@ -12,6 +12,7 @@ public class CoinBag
     public CoinBag(int coins)
     {
         CoinValue = coins;
+        CoinMax = 99;
     }
 
     public bool AddCoin(int coins)

@@ -31,7 +31,5 @@ namespace Assets.Scripts.Drops
             }
             return this.DropRating;
         }
-
-
     }
 }

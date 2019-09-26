@@ -19,10 +19,9 @@ public class Coins : Dropable
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            Debug.Log("Player not null");
-            //player.Gold.AddCoin(ActualCoinNumber);
-            Destroy(this.gameObject);
-            if (player.Gold == null) Debug.LogWarning("GOLD NULO");
+            player.Gold.AddCoin(ActualCoinNumber);
+            Debug.Log("Player tem: " + player.Gold.CoinValue);
+            Destroy(gameObject);
         }
     }
     
