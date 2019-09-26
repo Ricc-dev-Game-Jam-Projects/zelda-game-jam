@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    
-
     void Awake()
     {
         MyMove = GetComponent<Move>();
@@ -15,6 +13,8 @@ public class Player : Entity
     private void Start()
     {
         MyAttack._player = this;
+        Life = new Heart(3);
+        Gold = new CoinBag(0);
     }
 
     void Update()

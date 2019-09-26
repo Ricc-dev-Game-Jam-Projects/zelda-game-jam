@@ -9,7 +9,8 @@ public class Enemy : Entity
 
     void Start()
     {
-        
+        Life = new Heart(3);
+        Gold = new CoinBag(0);
     }
 
     void Update()

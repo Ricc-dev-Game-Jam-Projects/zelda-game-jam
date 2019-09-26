@@ -3,37 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
-namespace Assets.Scripts.Drops
+public class Coins : Dropable
 {
-    public class Coins : Dropable
+    public int ActualCoinNumber;
+
+    private void Start()
     {
-        private int MaximumCoins { get; set; }
-        private int ActualCoinNumber { get; set; }
+        this.DropRating = 0.35f;
+    }
 
-        public Coins(int max)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Player player = collision.gameObject.GetComponent<Player>();
+        if (player != null)
         {
-            this.DropRating = 0.35f;
-            this.ActualCoinNumber = 0;
-            this.MaximumCoins = max;
+            player.Gold.AddCoin(ActualCoinNumber);
+            Debug.Log("Player tem: " + player.Gold.CoinValue);
+            Destroy(gameObject);
         }
+    }
+    
+    public override float DecreaseDropRating(float parameter)
+    {
+        this.DropRating = DropRating - parameter;
+        return this.DropRating;
+    }
 
-
-        public override float DecreaseDropRating(float parameter)
+    public override float IncreaseDropRating()
+    {
+        if(ActualCoinNumber == 20)
         {
-            this.DropRating = DropRating - parameter;
+            this.DropRating = DropRating + 0.10f;
             return this.DropRating;
-            
         }
-
-        public override float IncreaseDropRating()
-        {
-            if(MaximumCoins - ActualCoinNumber == 20)
-            {
-                this.DropRating = DropRating + 0.10f;
-                return this.DropRating;
-            }
-            return this.DropRating;
-        }
+        return this.DropRating;
     }
 }
