@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    // Start is called before the first frame update
+    //Life
+    //Gold
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(Life <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+
     }
 }

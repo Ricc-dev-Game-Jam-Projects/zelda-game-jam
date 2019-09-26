@@ -15,7 +15,7 @@ public class Attack : MonoBehaviour
     public Direction attackDir;
     private Move _move;
     private float timeAt = 0f;
-    private float timeTot = 1f;
+    private float timeTot = 0.5f;
     public bool Attacking = false;
 
     void Start()

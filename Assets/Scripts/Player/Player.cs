@@ -18,7 +18,7 @@ public class Player : Entity
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) || Input.GetMouseButtonDown(0))
         {
             MyAttack.Hit();
         }
@@ -26,21 +26,24 @@ public class Player : Entity
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A))
+        if(!MyAttack.Attacking)
         {
-            MyMove.MoveTo(Direction.left);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            MyMove.MoveTo(Direction.right);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            MyMove.MoveTo(Direction.down);
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            MyMove.MoveTo(Direction.up);
+            if (Input.GetKey(KeyCode.A))
+            {
+                MyMove.MoveTo(Direction.left);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                MyMove.MoveTo(Direction.right);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                MyMove.MoveTo(Direction.down);
+            }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                MyMove.MoveTo(Direction.up);
+            }
         }
     }
 }

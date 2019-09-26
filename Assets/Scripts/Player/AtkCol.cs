@@ -9,5 +9,7 @@ public class AtkCol : MonoBehaviour
     public void OnAtkEnter(Entity enemy)
     {
         if (this.ent = enemy) return;
+
+        Debug.Log("Attacked: " + enemy.name);
     }
 }

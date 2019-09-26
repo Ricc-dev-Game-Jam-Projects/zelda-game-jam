@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayerFind : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool PlayerInside = false;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.GetComponent<Player>() != null)
+        {
+            Debug.Log("Player Entered 2d");
+            PlayerInside = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.GetComponent<Player>() != null)
+        {
+            Debug.Log("Player Exited 2d");
+            PlayerInside = false;
+        }
     }
 }
