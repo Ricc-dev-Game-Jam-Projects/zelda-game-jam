@@ -14,10 +14,7 @@ public class Enemy : Entity
 
     void Update()
     {
-        if(Life <= 0)
-        {
-            Die();
-        }
+        
     }
 
     public void Die()

@@ -1,0 +1,18 @@
+diff a/Assets/Scenes/SampleScene.unity b/Assets/Scenes/SampleScene.unity	(rejected hunks)
+@@ -32876,10 +32876,15 @@
+       propertyPath: m_LocalEulerAnglesHint.z
+       value: 0
+       objectReference: {fileID: 0}
++    - target: {fileID: 4277109080178212731, guid: 87007b0c153c99040adbd768cd34e20f,
++        type: 3}
++      propertyPath: radius
++      value: 1.6
++      objectReference: {fileID: 0}
+     - target: {fileID: 4277109080178212734, guid: 87007b0c153c99040adbd768cd34e20f,
+         type: 3}
+       propertyPath: target
+       value: 
+-      objectReference: {fileID: 0}
++      objectReference: {fileID: 830789204}
+     m_RemovedComponents: []
+   m_SourcePrefab: {fileID: 100100000, guid: 87007b0c153c99040adbd768cd34e20f, type: 3}
