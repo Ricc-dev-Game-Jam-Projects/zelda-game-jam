@@ -327,7 +327,6 @@ MonoBehaviour:
   MyMove: {fileID: 4277109080681432433}
   MyAttack: {fileID: 4277109080681432447}
   Damage: 0.25
-  MyRoot: {fileID: 4277109080178212730}
   dropper: {fileID: 4155814606766625248}
 --- !u!114 &4277109080681432447
 MonoBehaviour:
@@ -345,7 +344,7 @@ MonoBehaviour:
   DownCollider: {fileID: 4277109081249309048}
   RightCollider: {fileID: 4277109080744040045}
   LeftCollider: {fileID: 4277109081458579610}
-  _player: {fileID: 4277109080681432432}
+  _entity: {fileID: 4277109080681432432}
   attackDir: 0
   Attacking: 0
 --- !u!114 &4277109080681432436
@@ -605,6 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerInside: 0
+  Distance: 100
 --- !u!1 &4277109081249309031
 GameObject:
   m_ObjectHideFlags: 0
