@@ -23,6 +23,11 @@ public class Player : Entity
         {
             MyAttack.Hit();
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            TakeDamage(Damage);
+        }
     }
 
     private void FixedUpdate()
@@ -50,6 +55,6 @@ public class Player : Entity
 
     public override void Die()
     {
-        Debug.Log("Loose screen");
+        Debug.Log("You Loose!");
     }
 }
