@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Enemy : Entity
@@ -8,11 +7,18 @@ public class Enemy : Entity
     //Gold
     public GameObject MyRoot;
     public Dropper dropper;
+    public event Action OnTakeDamageEvent;
 
     void Start()
     {
         Life = new Heart(3);
         Gold = new CoinBag(0);
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        OnTakeDamageEvent?.Invoke();
     }
 
     public override void Die()

@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 4277109080178212732}
   - component: {fileID: 4277109080178212731}
   - component: {fileID: 4277109080178212734}
+  - component: {fileID: 1087619038}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -207,6 +208,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!50 &1087619038
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4277109080178212730}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4277109080681432446
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +244,7 @@ GameObject:
   - component: {fileID: 4277109080681432447}
   - component: {fileID: 4277109080681432436}
   - component: {fileID: 4277109080681432437}
-  - component: {fileID: 1407290435}
+  - component: {fileID: 1671206583}
   m_Layer: 9
   m_Name: Slime
   m_TagString: Untagged
@@ -286,7 +308,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 90
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: aca8ac094d344e447b7665c93726a141, type: 3}
   m_Color: {r: 1, g: 0.11284234, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -380,27 +402,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09
---- !u!50 &1407290435
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &1671206583
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4277109080681432446}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb314b47d3b263b4db168292943c7bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 10
+  duration: 0.05
 --- !u!1 &4277109080744040044
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,12 +823,12 @@ PrefabInstance:
     - target: {fileID: 6860973514972231682, guid: fe969d20eda38cc46b7a718a0e3232a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 6860973514972231682, guid: fe969d20eda38cc46b7a718a0e3232a7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 6860973514972231682, guid: fe969d20eda38cc46b7a718a0e3232a7,
         type: 3}
@@ -872,12 +887,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe969d20eda38cc46b7a718a0e3232a7, type: 3}
---- !u!4 &4155814606766625263 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6860973514972231682, guid: fe969d20eda38cc46b7a718a0e3232a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 7393635508351150573}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4155814606766625248 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6860973514972231693, guid: fe969d20eda38cc46b7a718a0e3232a7,
@@ -890,3 +899,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df36b4583eaebc5488ab9675223d2e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &4155814606766625263 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6860973514972231682, guid: fe969d20eda38cc46b7a718a0e3232a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7393635508351150573}
+  m_PrefabAsset: {fileID: 0}
