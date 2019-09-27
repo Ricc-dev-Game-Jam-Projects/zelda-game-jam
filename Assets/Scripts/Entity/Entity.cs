@@ -11,6 +11,7 @@ public class Entity : MonoBehaviour
 
     public Move MyMove;
     public Attack MyAttack;
+    public float Damage = 0.25f;
 
     private void Start()
     {
@@ -19,16 +20,17 @@ public class Entity : MonoBehaviour
         Gold = new CoinBag(0);
     }
     
-
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (Life.Damage(damage))
         {
             this.isAlive = false;
+            Die();
         }
-        else
-        {
-            //knockback pra voce fazer riccardo
-        }
+    }
+
+    public virtual void Die()
+    {
+
     }
 }

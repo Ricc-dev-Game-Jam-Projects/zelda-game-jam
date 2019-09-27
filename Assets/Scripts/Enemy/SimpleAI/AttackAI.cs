@@ -14,7 +14,14 @@ public class AttackAI : MonoBehaviour
 {
     public PlayerFind playerFinder;
     public AIPath path;
+    public AIDestinationSetter dest;
     public AIState state;
+
+    private void Start()
+    {
+        Transform g = FindObjectOfType<Player>().gameObject.transform;
+        dest.target = g;
+    }
 
     void Update()
     {
