@@ -12,7 +12,7 @@ public class Player : Entity
 
     private void Start()
     {
-        MyAttack._player = this;
+        MyAttack._entity = this;
         Life = new Heart(3);
         Gold = new CoinBag(0);
     }

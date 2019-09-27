@@ -6,7 +6,7 @@ public class Enemy : Entity
 {
     //Life
     //Gold
-    public GameObject MyRoot;
+    //public GameObject MyRoot;
     public Dropper dropper;
 
     void Start()
@@ -19,6 +19,6 @@ public class Enemy : Entity
     {
         dropper.DropCoin(Gold.CoinValue);
         isAlive = false;
-        Destroy(MyRoot, .5f);
+        Destroy(gameObject, .5f);
     }
 }
