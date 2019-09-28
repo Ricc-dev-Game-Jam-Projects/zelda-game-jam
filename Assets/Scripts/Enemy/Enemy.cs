@@ -8,11 +8,16 @@ public class Enemy : Entity
     //public GameObject MyRoot;
     public Dropper dropper;
     public event Action OnTakeDamageEvent;
+    public GameObject MyRoot;
+    public Dropable item;
 
     void Start()
     {
         Life = new Heart(3);
         Gold = new CoinBag(0);
+
+        dropper.MyOwner = new Bag();
+        dropper.MyOwner.gold = new CoinBag(Gold.CoinValue);
     }
 
     public override void TakeDamage(float damage)
@@ -23,8 +28,8 @@ public class Enemy : Entity
 
     public override void Die()
     {
-        dropper.DropCoin(Gold.CoinValue);
+        dropper.Drop();
         isAlive = false;
-        Destroy(gameObject, .5f);
+        Destroy(MyRoot, .5f);
     }
 }

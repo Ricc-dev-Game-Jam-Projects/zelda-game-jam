@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    private float newLife = 0f;
+
+    public float AddLife = 0f;
+
     void Awake()
     {
         MyMove = GetComponent<Move>();
@@ -28,6 +32,11 @@ public class Player : Entity
         {
             TakeDamage(Damage);
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            AddNewLife(AddLife);
+        }
     }
 
     private void FixedUpdate()
@@ -50,6 +59,18 @@ public class Player : Entity
             {
                 MyMove.MoveTo(Direction.up);
             }
+        }
+    }
+
+    public void AddNewLife(float big)
+    {
+        float tmp = 0f;
+        newLife += big;
+        if(newLife >= 1f)
+        {
+            tmp = newLife - 1f;
+            Life.AddHeart();
+            newLife = tmp;
         }
     }
 

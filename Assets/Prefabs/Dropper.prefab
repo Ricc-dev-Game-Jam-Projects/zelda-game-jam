@@ -43,5 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df36b4583eaebc5488ab9675223d2e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basePrefab: {fileID: 6171292940993720225, guid: 70996f3e145210349b04276640bad169,
+    type: 3}
   Hearts: {fileID: 0}
   Coins: {fileID: 7937912641184251379, guid: e01939911938d9b40a5fcad36cee56fc, type: 3}

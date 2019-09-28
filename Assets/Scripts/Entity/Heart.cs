@@ -18,6 +18,7 @@ public class Heart
 {
     public float MaxLifePoints = 3f;
     public Queue<LifePoints> LifePoints = new Queue<LifePoints>();
+    private const int maxHearts = 8;   
 
     public Heart(float start)
     {
@@ -65,7 +66,19 @@ public class Heart
                 return;
             }
         }
-        
+    }
+
+    public void AddHeart()
+    {
+        if(MaxLifePoints + 1 == maxHearts)
+        {
+            return;
+        }
+        else
+        {
+            MaxLifePoints++;
+            LifePoints.Enqueue(new LifePoints(1f));
+        }
     }
 
     public bool Damage(float damage)
