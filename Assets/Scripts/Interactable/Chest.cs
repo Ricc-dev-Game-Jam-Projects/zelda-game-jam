@@ -24,5 +24,12 @@ public class Chest : Interactable
         {
             Instantiate(item, Random.insideUnitCircle * dropRadius, Quaternion.identity);
         }
+        hasOpened = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.GetComponent<Player>() != null)
+            Interact();
     }
 }
