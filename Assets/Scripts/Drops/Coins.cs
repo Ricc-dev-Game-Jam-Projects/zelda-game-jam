@@ -16,13 +16,16 @@ public class Coins : Dropable
         {
             player.Gold.AddCoin(ActualCoinNumber);
             Debug.Log("Player has: " + player.Gold.CoinValue);
-            Destroy(gameObject);
+            Destroy(root);
         }
     }
 
     public override void SetItem(Bag Owner)
     {
         if(Owner.gold != null)
+        {
             ActualCoinNumber = Owner.gold.CoinValue;
+            Debug.Log("Coins: " + Owner.gold.CoinValue);
+        }
     }
 }

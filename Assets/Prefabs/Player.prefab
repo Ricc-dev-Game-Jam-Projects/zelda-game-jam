@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 4239938966417646781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.52, y: -3.5, z: -1.9472656}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
   - {fileID: 943366445}
@@ -230,7 +230,7 @@ MonoBehaviour:
   DownCollider: {fileID: 534285731075502752}
   RightCollider: {fileID: 7967097820527385204}
   LeftCollider: {fileID: 3414621153908150450}
-  _entity: {fileID: 0}
+  _entity: {fileID: 6755821362489164089}
   attackDir: 0
   Attacking: 0
 --- !u!114 &6755821362489164089
@@ -249,7 +249,7 @@ MonoBehaviour:
   MyMove: {fileID: 2123191159}
   MyAttack: {fileID: 2565874352586059746}
   Damage: 0.25
-  AddLife: 0
+  AddLife: 0.5
 --- !u!50 &7790045714649432567
 Rigidbody2D:
   serializedVersion: 4
@@ -593,6 +593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1873426490571239393, guid: 5a40d5867ae779f48a949aff3bfd458b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873426490571239393, guid: 5a40d5867ae779f48a949aff3bfd458b,
+        type: 3}
       propertyPath: m_LocalScale.y
       value: 4.5
       objectReference: {fileID: 0}
@@ -600,11 +605,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1873426490571239393, guid: 5a40d5867ae779f48a949aff3bfd458b,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8734847070167904881, guid: 5a40d5867ae779f48a949aff3bfd458b,
         type: 3}

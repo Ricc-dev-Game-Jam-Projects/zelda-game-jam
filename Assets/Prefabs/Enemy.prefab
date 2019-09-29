@@ -354,6 +354,7 @@ MonoBehaviour:
   dropper: {fileID: 4155814606766625248}
   MyRoot: {fileID: 4277109080178212730}
   item: {fileID: 0}
+  EnemyCoins: 2
 --- !u!114 &4277109080681432447
 MonoBehaviour:
   m_ObjectHideFlags: 0

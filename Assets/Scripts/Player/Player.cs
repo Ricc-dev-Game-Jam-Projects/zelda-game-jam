@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
     private float newLife = 0f;
 
     public float AddLife = 0f;
+    public bool HasWeapon = false;
 
     void Awake()
     {
@@ -25,7 +27,7 @@ public class Player : Entity
     {
         if (Input.GetKeyDown(KeyCode.J) || Input.GetMouseButtonDown(0))
         {
-            MyAttack.Hit();
+            if(HasWeapon) MyAttack.Hit();
         }
 
         if (Input.GetKeyDown(KeyCode.L))
@@ -76,6 +78,6 @@ public class Player : Entity
 
     public override void Die()
     {
-        Debug.Log("You Loose!");
+        SceneManager.LoadScene(1);
     }
 }

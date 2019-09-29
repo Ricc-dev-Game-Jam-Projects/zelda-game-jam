@@ -10,11 +10,12 @@ public class Enemy : Entity
     public event Action OnTakeDamageEvent;
     public GameObject MyRoot;
     public Dropable item;
+    public int EnemyCoins;
 
     void Start()
     {
         Life = new Heart(3);
-        Gold = new CoinBag(0);
+        Gold = new CoinBag(EnemyCoins);
 
         dropper.MyOwner = new Bag();
         dropper.MyOwner.gold = new CoinBag(Gold.CoinValue);
