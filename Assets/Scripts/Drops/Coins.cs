@@ -8,36 +8,24 @@ using UnityEngine;
 public class Coins : Dropable
 {
     public int ActualCoinNumber;
-
-    private void Start()
-    {
-        this.DropRating = 0.35f;
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {
             player.Gold.AddCoin(ActualCoinNumber);
-            Debug.Log("Player tem: " + player.Gold.CoinValue);
-            Destroy(gameObject);
+            Debug.Log("Player has: " + player.Gold.CoinValue);
+            Destroy(root);
         }
-    }
-    
-    public override float DecreaseDropRating(float parameter)
-    {
-        this.DropRating = DropRating - parameter;
-        return this.DropRating;
     }
 
-    public override float IncreaseDropRating()
+    public override void SetItem(Bag Owner)
     {
-        if(ActualCoinNumber == 20)
+        if(Owner.gold != null)
         {
-            this.DropRating = DropRating + 0.10f;
-            return this.DropRating;
+            ActualCoinNumber = Owner.gold.CoinValue;
+            Debug.Log("Coins: " + Owner.gold.CoinValue);
         }
-        return this.DropRating;
     }
 }

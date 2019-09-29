@@ -16,11 +16,13 @@ public class AttackAI : MonoBehaviour
     public AIPath path;
     public AIDestinationSetter dest;
     public AIState state;
+    private Animator anim;
 
     private void Start()
     {
         Transform g = FindObjectOfType<Player>().gameObject.transform;
         dest.target = g;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,6 +34,12 @@ public class AttackAI : MonoBehaviour
         {
             state = AIState.Around;
         }
+        Vector3 dest = path.steeringTarget;
+        dest.Normalize();
+        //Debug.Log("x: " + dest.x + " y: " + dest.y + " magnitude: " + dest.magnitude);
+        anim.SetFloat("Horizontal", dest.x);
+        anim.SetFloat("Vertical", dest.y);
+        anim.SetFloat("Magnitude", dest.magnitude);
 
         switch (state)
         {

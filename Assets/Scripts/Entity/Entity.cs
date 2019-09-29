@@ -20,7 +20,7 @@ public class Entity : MonoBehaviour
         Gold = new CoinBag(0);
     }
     
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         if (Life.Damage(damage))
         {

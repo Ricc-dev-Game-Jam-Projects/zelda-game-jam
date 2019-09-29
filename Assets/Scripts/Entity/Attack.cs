@@ -11,7 +11,7 @@ public class Attack : MonoBehaviour
     public AtkCol RightCollider;
     public AtkCol LeftCollider;
 
-    public Entity _player;
+    public Entity _entity;
     public Direction attackDir;
     private Move _move;
     private float timeAt = 0f;
@@ -20,12 +20,12 @@ public class Attack : MonoBehaviour
 
     void Start()
     {
-        _move = _player.MyMove;
+        _move = _entity.MyMove;
 
-        UpCollider.ent    = _player;
-        DownCollider.ent = _player;
-        RightCollider.ent = _player;
-        LeftCollider.ent = _player;
+        UpCollider.ent    = _entity;
+        DownCollider.ent = _entity;
+        RightCollider.ent = _entity;
+        LeftCollider.ent = _entity;
     }
     
     void Update()

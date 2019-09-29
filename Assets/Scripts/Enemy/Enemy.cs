@@ -1,23 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Enemy : Entity
 {
     //Life
     //Gold
-    public GameObject MyRoot;
+    //public GameObject MyRoot;
     public Dropper dropper;
+    public event Action OnTakeDamageEvent;
+    public GameObject MyRoot;
+    public Dropable item;
+    public int EnemyCoins;
 
     void Start()
     {
         Life = new Heart(3);
-        Gold = new CoinBag(0);
+        Gold = new CoinBag(EnemyCoins);
+
+        dropper.MyOwner = new Bag();
+        dropper.MyOwner.gold = new CoinBag(Gold.CoinValue);
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        OnTakeDamageEvent?.Invoke();
     }
 
     public override void Die()
     {
-        dropper.DropCoin(Gold.CoinValue);
+        dropper.Drop();
         isAlive = false;
         Destroy(MyRoot, .5f);
     }
