@@ -14,13 +14,9 @@ public class Player : Entity
     {
         MyMove = GetComponent<Move>();
         MyAttack = GetComponent<Attack>();
-    }
-
-    private void Start()
-    {
-        MyAttack._entity = this;
         Life = new Heart(3);
         Gold = new CoinBag(0);
+        MyAttack._entity = this;
     }
 
     void Update()
