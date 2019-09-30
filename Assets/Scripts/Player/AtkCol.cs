@@ -30,5 +30,11 @@ public class AtkCol : MonoBehaviour
             OnAtkEnter(ent2, this.ent);
             return;
         }
+        Destructable destrc;
+        destrc = collision.gameObject.GetComponent<Destructable>();
+        if(destrc != null)
+        {
+            destrc.OnDestructed();
+        }
     }
 }

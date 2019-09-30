@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    //Life
-    //Gold
-    //public GameObject MyRoot;
     public Dropper dropper;
     public event Action OnTakeDamageEvent;
     public GameObject MyRoot;

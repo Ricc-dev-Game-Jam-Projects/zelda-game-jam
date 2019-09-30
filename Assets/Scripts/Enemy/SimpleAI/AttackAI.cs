@@ -15,8 +15,12 @@ public class AttackAI : MonoBehaviour
     public PlayerFind playerFinder;
     public AIPath path;
     public AIDestinationSetter dest;
+    public Enemy Me;
     public AIState state;
+    public bool CanAttack;
     private Animator anim;
+    private float TimeAt = 0f;
+    public float AtkRate = 0.5f;
 
     private void Start()
     {
@@ -49,6 +53,16 @@ public class AttackAI : MonoBehaviour
             case AIState.Around:
                 path.canSearch = false;
                 break;
+        }
+
+        if (CanAttack)
+        {
+            TimeAt += Time.deltaTime;
+            if(TimeAt >= AtkRate)
+            {
+                playerFinder.player.TakeDamage(Me.Damage);
+                TimeAt = 0f;
+            }
         }
     }
 }
