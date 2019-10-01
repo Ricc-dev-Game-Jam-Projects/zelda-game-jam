@@ -22,7 +22,14 @@ public class Chest : Interactable
         sr.sprite = chestOn;
         foreach (GameObject item in items)
         {
-            Instantiate(item, Random.insideUnitCircle * dropRadius, Quaternion.identity);
+            if(DropPosition != null)
+            {
+                GameObject g = Instantiate(item, DropPosition, false);
+                g.GetComponent<Transform>().localPosition = Vector3.zero;
+            } else
+            {
+                Instantiate(item, Random.insideUnitCircle * dropRadius, Quaternion.identity);
+            }
         }
         hasOpened = true;
     }
